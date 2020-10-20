@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>accordion</title>
+        <style>
+
+
+            body{
+            background:white;
+            margin: 0;
+            padding: 0;
+            }
+           
+            .accordion{
+                font-family: Verdana, sans-serif;
+                font-weight: bold;
+                background-color: #eee;
+                color: #000;
+                cursor: pointer;
+                padding: 20px;
+                width: 100%;
+                text-align: left;
+                border: none;
+                outline: none;
+                transition: 0.4s;
+            }
+
+            .active, .accordion:hover{
+                background-color: rgb(233, 86, 86);
+            }
+
+            .panel{
+                padding: 0 20px;
+                background-color: white;
+                overflow: hidden;
+                max-height: 0;
+                transition: max-height 0.2s ease-out;
+            }
+
+            .accordion:after{
+                content: '\02795';
+                font-size: 8px;
+                color: #000;
+                float: right;
+                margin-left: 5px;
+
+            }
+
+            .active::after{
+                content: '\02796';
+                font-size: 8px;
+                color: #000;
+                float: right;
+                margin-left: 5px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+
+        <button class="accordion">Ruby</button>
+        <div class="panel">
+            <p>
+            Ruby is a pure Object-Oriented language developed by Yukihiro Matsumoto (also 
+            known as Matz in the Ruby community) in the mid 1990’s in Japan. Everything in R
+            uby is an object except the blocks but there are replacements too for it i.e procs 
+            and lambda. The objective of Ruby’s development was to make it act as a sensible b
+            uffer between human programmers and the underlying computing machinery. Ruby has sim
+            ilar syntax to that of many programming languages like C and Java, so it is easy for J
+            ava and C programmers to learn. It supports mostly all the platforms like Windows, Mac, Linux.
+            </p>
+        </div>
+
+        <button class="accordion">Perl</button>
+        <div class="panel">
+            <p>
+            Perl is a general-purpose, high level interpreted and dynamic programming language. It
+             was developed by Larry Wall, in 1987. There is no official Full form of the Perl, but
+              still, the most used expansion is “Practical Extraction and Reporting Language“. Some 
+              of the programmers also refer Perl as the “Pathologically Eclectic Rubbish Lister” Or 
+              “Practically Everything Really Likable“. The acronym “Practical Extraction and Reporting
+               Language” is used widely because Perl was originally developed for the text processing 
+               like extracting the required information from a specified text file and for converting 
+               the text file into a different form.
+            </p>
+        </div>
+
+        <button class="accordion">Swift</button>
+        <div class="panel">
+            <p>
+            Swift language was developed by ‘Chris Lattner‘ with an aim to resolve difficulties existed 
+            in Objective C. It was introduced at Apple’s 2014 Worldwide Developers Conference (WWDC) wit
+             version Swift 1.0. Soon, It underwent an upgrade to version 1.2 during 2014. Swift 2.0 was 
+             introduced at WWDC 2015. Initially, version 2.2 was made open-source software under the Apache
+              License 2.0 on December 3, 2015, for Apple and Linux platforms. It is primarily designed to 
+              work with Apple’s Cocoa and Cocoa Touch frameworks and the large body of existing Objective-C
+               code written for Apple products. Swift language has gone through major changes since its release
+                from version names 1.0, 2.0, 3.0 and 4.0 and later. The current released version is Swift 4.2 with 
+                a beta version of Swift 4.3 and Xcode 10.
+            </p>
+        </div>
+
+
+        <script>
+
+
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function()
+                {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+
+                    if(panel.style.maxHeight)
+                        panel.style.maxHeight = null;
+                    else
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                        
+                });
+            }
+
+
+        </script>
+    </body>
+</html>
