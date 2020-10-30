@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>float</title>
+    </head>
+
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            position:absolute;
+            top:30%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .menu-bar{
+            background: rgb(255,73,72);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .menu-bar ul{
+            display: inline-flex;
+            list-style: none;
+            color: white;
+        }
+
+        .menu-bar ul li{
+            width: 150px;
+            margin: 15px;
+            padding: 15px;
+        }
+
+        .menu-bar ul li a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .active, .menu-bar ul li:hover{
+            background-color: rgb(150,150,150);
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+
+        .menu-bar .fa{
+            margin-right: 8px;
+        }
+
+        .sub-menu-1{
+            display: none; 
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+
+        .menu-bar ul li:hover .sub-menu-1{
+            display: block;
+            position: absolute;
+            background: rgb(255,73,72);
+            margin-top: 17px;
+            margin-left: -18px;
+        }
+
+        .menu-bar ul li:hover .sub-menu-1 ul{
+            display:  block;
+            margin: 10px;
+        }
+
+        .menu-bar ul li:hover .sub-menu-1 ul li{
+            width: 150px;
+            padding: 10px;
+        }
+
+        .menu-bar ul li:hover .sub-menu-1 ul li a:hover{
+            color: rgb(255,73,72);
+        }
+
+        .fa-angle-right{
+            float: right;
+        }
+
+        .sub-menu-2{
+            display: none;
+            border-radius: 10px;
+            border: 3px solid white;
+        }
+
+        .hover-me:hover .sub-menu-2{
+            position: absolute;
+            display: block;
+            margin-top: -40px;
+            margin-left: 140px;
+            background-color: rgb(255,73,72);
+        }
+
+
+    </style>
+
+    <body class="container">
+
+        <div class="menu-bar">
+            <ul>
+                <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i>Home</a> </li>
+                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>About&nbspUs</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li> <a href="#">Mission</a></li>
+                            <li> <a href="#">Vision</a></li>
+                            <li> <a href="#">Team</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li><a href="#"><i class="fa fa-clone" aria-hidden="true"></i>Services</a> 
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li> <a href="#">Web Design</a></li>
+                            <li class="hover-me"> <a href="#">Marketing<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="#">SEO</a></li>
+                                        <li><a href="#">Social Media</a></li>
+                                        <li><a href="#">Email Marketing</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="hover-me"> <a href="#">Mobile App<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <li><a href="#">Android</a></li>
+                                        <li><a href="#">IOS</a></li>
+                                        <li><a href="#">Ionic</a></li>
+                                        <li><a href="#">Flutter</a></li>
+                                        <li><a href="#">Unity</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>      
+                <li> <a href="#"><i class="fa fa-inr" aria-hidden="true"></i>Pricing</a> </li>
+                <li> <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a> </li>
+            </ul>
+        </div>
+
+
+    </body>
+</html>
